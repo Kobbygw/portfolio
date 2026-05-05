@@ -38,8 +38,9 @@ export const useAsciiEngine = (
   const memoryCache = useRef<{ [key: number]: RawParticle[] }>({});
 
   const calculateSize = useCallback((width: number) => {
-    if (width <= 480) return Math.min(280, width - 40);
+    if (width <= 480) return Math.min(300, width - 40);
     if (width <= 768) return Math.min(350, width - 60);
+    if (width <= 1024) return Math.min(400, width - 100);
     return 450;
   }, []);
 
